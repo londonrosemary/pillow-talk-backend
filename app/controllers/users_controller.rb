@@ -6,6 +6,11 @@ class UsersController < ApplicationController
         render json: @users, status: 200
     end
 
+    def show 
+        @user = user.find(params[:id])
+        render json: @user, status: 200
+    end
+
     private
 
     def render_not_found_response
