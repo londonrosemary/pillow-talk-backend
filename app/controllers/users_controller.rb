@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def index 
         @users = User.all
-        render json: @users, status: 200
+        render json: @users.as_json(except: :dreams), status: 200
     end
 
     def show 
@@ -22,6 +22,11 @@ class UsersController < ApplicationController
         else
             render json: user.errors, status: :unprocessable_entity
         end
+    end
+
+    def destroy
+        @user = User.find(params[:user_id])
+        @user.destroy
     end
 
     private
