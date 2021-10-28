@@ -11,6 +11,11 @@ class DreamsController < ApplicationController
         render json: @dream, status: 200
     end
 
+    def destroy
+        @dream = Dream.find(params[:id])
+        @dream.destroy
+    end
+
     private
 
     def render_not_found_response
