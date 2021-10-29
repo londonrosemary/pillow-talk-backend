@@ -6,7 +6,8 @@ class UsersController < ApplicationController
         render json: @users.as_json(except: :dreams), status: 200
     end
 
-    def show 
+    def show
+        byebug
         if current_user
             render json: current_user, status: :ok
         else
