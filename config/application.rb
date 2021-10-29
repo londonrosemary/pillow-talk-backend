@@ -38,7 +38,7 @@ module PillowTalkBackend
     config.middleware.use ActionDispatch::Session::CookieStore
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
-    config.action_dispatch.cookies_same_site_protection = :secure
+    # config.action_dispatch.cookies_same_site_protection = :secure
 
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
