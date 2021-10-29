@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        byebug
         if current_user
             render json: current_user, status: :ok
         else
