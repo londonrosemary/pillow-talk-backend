@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         if current_user
             session.delete :user_id
         else
-            ender json: { error: 'no active session'}, status: :unprocessable_entity
+            render json: { error: 'no active session'}, status: :unprocessable_entity
         end
     end
 end
